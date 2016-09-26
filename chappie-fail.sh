@@ -1,4 +1,5 @@
 #! /bin/bash
+tput civis
 printf "Collect sub-programs and begin master compile? [Y] [N]"
 sleep 1
 printf "\rCollect sub-programs and begin master compile? [ ] [N]"
@@ -80,3 +81,4 @@ echo "Undefined Error."
 echo
 sleep 1
 echo "Experiment unsuccessful."
+tput cnorm
