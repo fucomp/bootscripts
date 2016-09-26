@@ -1,7 +1,8 @@
 #! /bin/bash
 tput civis
+echo
 printf "Collect sub-programs and begin master compile? [Y] [N]"
-sleep 1
+sleep 2
 printf "\rCollect sub-programs and begin master compile? [ ] [N]"
 sleep 0.5
 printf "\rCollect sub-programs and begin master compile? [Y] [N]"
@@ -9,6 +10,10 @@ sleep 0.5
 printf "\rCollect sub-programs and begin master compile? [ ] [N]"
 sleep 0.5
 printf "\rCollect sub-programs and begin master compile? [Y] [N]"
+sleep 0.5
+printf "\rCollect sub-programs and begin master compile? [ ] [N]"
+sleep 0.5
+printf "\rCollect sub-programs and begin master compile? [\e[32mY\e[0m] [N]"
 echo
 sleep 0.5
 echo "** Loading Ai components **"
@@ -24,7 +29,7 @@ function load-component {
     sleep 0.1
     i=$(( i - 1 ))
   done
-  printf "OK"
+  printf "\e[32mOK\e[0m"
 }
 
 function activate_main_ai_network {
@@ -81,4 +86,6 @@ echo "Undefined Error."
 echo
 sleep 1
 echo "Experiment unsuccessful."
+sleep 1
+echo
 tput cnorm
