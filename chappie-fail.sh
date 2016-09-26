@@ -12,93 +12,54 @@ echo
 sleep 0.5
 echo "** Loading Ai components **"
 sleep 0.05
-printf "\rBootstrap"
-sleep 0.1
-printf "\rBootstrap  –"
-sleep 0.1
-printf "\rBootstrap  – –"
-sleep 0.1
-printf "\rBootstrap  – – –"
-sleep 0.1
-printf "\rBootstrap  — — — OK"
+
+function load-component {
+  local component="$1"
+  printf "\r%-11s" $component
+  sleep 0.1
+  local i=3
+  while [ $i -gt 0 ]; do
+    echo -n '— '
+    sleep 0.1
+    i=$(( i - 1 ))
+  done
+  printf "OK"
+}
+
+function activate_main_ai_network {
+  local i=4
+  echo -n "Activating MAIN AI NETWORK"
+  while [ $i -gt 0 ]; do
+    sleep 0.5
+    echo -n "."
+    i=$(( i - 1 ))
+  done
+}
+
+load-component "Bootstrap"
 echo
 sleep 1
-printf "\rSensorium"
-sleep 0.1
-printf "\rSensorium  –"
-sleep 0.1
-printf "\rSensorium  – –"
-sleep 0.1
-printf "\rSensorium  – – –"
-sleep 0.1
-printf "\rSensorium  — — — OK"
+load-component "Sensorium"
 echo
 sleep 1
-printf "\rSpeech"
-sleep 0.1
-printf "\rSpeech     –"
-sleep 0.1
-printf "\rSpeech     – –"
-sleep 0.1
-printf "\rSpeech     – – –"
-sleep 0.1
-printf "\rSpeech     — — — OK"
+load-component "Speech"
 echo
 sleep 1
-printf "\rVolition"
-sleep 0.1
-printf "\rVolition   –"
-sleep 0.1
-printf "\rVolition   – –"
-sleep 0.1
-printf "\rVolition   – – –"
-sleep 0.1
-printf "\rVolition   — — — OK"
+load-component "Volition"
 echo
 sleep 1
-printf "\rKnowledge"
-sleep 0.1
-printf "\rKnowledge  –"
-sleep 0.1
-printf "\rKnowledge  – –"
-sleep 0.1
-printf "\rKnowledge  – – –"
-sleep 0.1
-printf "\rKnowledge  — — — OK"
+load-component "Knowledge"
 echo
 sleep 1
-printf "\rEmotion"
-sleep 0.1
-printf "\rEmotion    –"
-sleep 0.1
-printf "\rEmotion    – –"
-sleep 0.1
-printf "\rEmotion    – – –"
-sleep 0.1
-printf "\rEmotion    — — — OK"
+load-component "Emotion"
 echo
 sleep 1
-printf "\rMotorium"
-sleep 0.1
-printf "\rMotorium  –"
-sleep 0.1
-printf "\rMotorium   – –"
-sleep 0.1
-printf "\rMotorium   – – –"
-sleep 0.1
-printf "\rMotorium   — — — OK"
+load-component "Motorium"
 echo
 sleep 1
+
 echo
-printf "Activating MAIN AI NETWORK"
-sleep 0.5
-printf "\rActivating MAIN AI NETWORK."
-sleep 0.5
-printf "\rActivating MAIN AI NETWORK.."
-sleep 0.5
-printf "\rActivating MAIN AI NETWORK..."
-sleep 0.5
-printf "\rActivating MAIN AI NETWORK...."
+activate_main_ai_network
 sleep 1
 echo
 
